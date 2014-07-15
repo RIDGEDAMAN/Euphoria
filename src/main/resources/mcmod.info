@@ -1,0 +1,21 @@
+[
+{
+  "modid": "Euphoria",
+  "name": "Euphoria",
+  "description": "A mystical utility mod!",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "ridgedaman"
+  ],
+  "credits": "Thanks to pahimar's LMRB",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
