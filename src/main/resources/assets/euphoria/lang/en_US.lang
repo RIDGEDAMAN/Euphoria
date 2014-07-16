@@ -1,6 +1,6 @@
 # Item Localizations
-item.euphoria:testItem=Item of Uselessness
+item.euphoria:testItem.name=Item of Uselessness
 # Block Localizations
-tile.euphoria:testBlock=Boring Block of Nothingness
+tile.euphoria:testBlock.name=Boring Block of Nothingness
 # Creative Tab  Localizations
 itemGroup.euphoria=Euphoria

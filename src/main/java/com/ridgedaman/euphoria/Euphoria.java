@@ -5,6 +5,7 @@ import com.ridgedaman.euphoria.init.ModBlocks;
 import com.ridgedaman.euphoria.init.ModItems;
 import com.ridgedaman.euphoria.proxy.IProxy;
 import com.ridgedaman.euphoria.reference.Reference;
+import com.ridgedaman.euphoria.util.LogHelper;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -29,11 +30,19 @@ public class Euphoria {
 
         ModBlocks.init();
         ModItems.init();
+
+        LogHelper.info("PreInitialization Complete!");
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent event){}
+    public void init(FMLInitializationEvent event){
+
+        LogHelper.info("Initialization Complete!");
+    }
 
     @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event){}
+    public void postInit(FMLPostInitializationEvent event){
+
+        LogHelper.info("PostInitialization Complete!");
+    }
 }
