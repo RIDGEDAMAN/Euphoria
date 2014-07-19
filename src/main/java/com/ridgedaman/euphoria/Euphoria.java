@@ -8,21 +8,32 @@ import com.ridgedaman.euphoria.reference.Reference;
 import com.ridgedaman.euphoria.util.LogHelper;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms.IMCEvent;
+import cpw.mods.fml.common.event.*;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class Euphoria {
 
-    @Mod.Instance(Reference.MOD_ID)
+    @Instance(Reference.MOD_ID)
     public static Euphoria instance;
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static IProxy proxy;
 
-    @Mod.EventHandler
+    @EventHandler
+    public void invalidFingerprint(FMLFingerprintViolationEvent event){
+
+    }
+
+    @EventHandler
+    public void serverStarting(FMLServerStartingEvent event){
+
+    }
+
+    @EventHandler
     public void preInit(FMLPreInitializationEvent event){
 
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
@@ -34,15 +45,20 @@ public class Euphoria {
         LogHelper.info("PreInitialization Complete!");
     }
 
-    @Mod.EventHandler
+    @EventHandler
     public void init(FMLInitializationEvent event){
 
         LogHelper.info("Initialization Complete!");
     }
 
-    @Mod.EventHandler
+    @EventHandler
     public void postInit(FMLPostInitializationEvent event){
 
         LogHelper.info("PostInitialization Complete!");
+    }
+
+    @EventHandler
+    public void handleIMCMessages(IMCEvent event){
+        
     }
 }
