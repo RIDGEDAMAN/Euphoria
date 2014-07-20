@@ -13,6 +13,7 @@ import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInterModComms.IMCEvent;
 import cpw.mods.fml.common.event.*;
+import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class Euphoria {
@@ -55,10 +56,16 @@ public class Euphoria {
     public void postInit(FMLPostInitializationEvent event){
 
         LogHelper.info("PostInitialization Complete!");
+
+        for(String oreName : OreDictionary.getOreNames()){
+
+            LogHelper.info(oreName);
+            OreDictionary.getOres(oreName);
+        }
     }
 
     @EventHandler
     public void handleIMCMessages(IMCEvent event){
-        
+
     }
 }
