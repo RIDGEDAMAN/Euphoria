@@ -1,13 +1,11 @@
 package com.ridgedaman.euphoria.client.gui;
 
-import com.ridgedaman.euphoria.Handler.ConfigurationHandler;
+import com.ridgedaman.euphoria.handler.ConfigurationHandler;
 import com.ridgedaman.euphoria.reference.Reference;
 import cpw.mods.fml.client.config.GuiConfig;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
-
-import java.util.List;
 
 public class ModGuiConfig extends GuiConfig{
 

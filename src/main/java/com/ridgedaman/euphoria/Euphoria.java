@@ -1,6 +1,6 @@
 package com.ridgedaman.euphoria;
 
-import com.ridgedaman.euphoria.Handler.ConfigurationHandler;
+import com.ridgedaman.euphoria.handler.ConfigurationHandler;
 import com.ridgedaman.euphoria.init.ModBlocks;
 import com.ridgedaman.euphoria.init.ModItems;
 import com.ridgedaman.euphoria.proxy.IProxy;
