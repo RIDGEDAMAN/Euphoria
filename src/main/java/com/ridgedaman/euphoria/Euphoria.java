@@ -3,6 +3,7 @@ package com.ridgedaman.euphoria;
 import com.ridgedaman.euphoria.handler.ConfigurationHandler;
 import com.ridgedaman.euphoria.init.ModBlocks;
 import com.ridgedaman.euphoria.init.ModItems;
+import com.ridgedaman.euphoria.init.Recipes;
 import com.ridgedaman.euphoria.proxy.IProxy;
 import com.ridgedaman.euphoria.reference.Reference;
 import com.ridgedaman.euphoria.util.LogHelper;
@@ -39,15 +40,20 @@ public class Euphoria {
 
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+        LogHelper.info("Configuration Complete!");
 
         ModBlocks.init();
         ModItems.init();
+        LogHelper.info("Block and Item Registration Complete!");
 
         LogHelper.info("PreInitialization Complete!");
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event){
+
+        Recipes.init();
+        LogHelper.info("Recipe Registration Complete!");
 
         LogHelper.info("Initialization Complete!");
     }
