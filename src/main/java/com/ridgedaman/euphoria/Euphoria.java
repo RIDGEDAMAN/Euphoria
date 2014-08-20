@@ -1,5 +1,6 @@
 package com.ridgedaman.euphoria;
 
+import com.ridgedaman.euphoria.client.handler.KeyInputEventHandler;
 import com.ridgedaman.euphoria.handler.ConfigurationHandler;
 import com.ridgedaman.euphoria.init.ModBlocks;
 import com.ridgedaman.euphoria.init.ModItems;
@@ -42,6 +43,9 @@ public class Euphoria {
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
         LogHelper.info("Configuration Complete!");
 
+
+        proxy.registerKeyBindings();
+
         ModBlocks.init();
         ModItems.init();
         LogHelper.info("Block and Item Registration Complete!");
@@ -54,6 +58,9 @@ public class Euphoria {
 
         Recipes.init();
         LogHelper.info("Recipe Registration Complete!");
+
+        FMLCommonHandler.instance().bus().register(new KeyInputEventHandler());
+        LogHelper.info("Key Bindings Complete!");
 
         LogHelper.info("Initialization Complete!");
     }
